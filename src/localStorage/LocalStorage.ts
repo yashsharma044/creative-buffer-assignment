@@ -1,26 +1,25 @@
 import { Product } from "../types/product";
-import { dataStorage } from "./Store";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type StorageObject = {
   PRODUCT: Product[];
 };
 
-export const setLocalData = <K extends keyof StorageObject>(
+export const setLocalData = async <K extends keyof StorageObject>(
   key: K,
   object: Partial<StorageObject[K]>,
-) => {
-  const data = getLocalData(key) || {};
+): Promise<void> => {
+  const data = (await getLocalData(key)) || {};
   const updatedData = { ...data, ...object };
 
-  dataStorage.set(key, JSON.stringify(updatedData));
+  await AsyncStorage.setItem(key, JSON.stringify(updatedData));
 };
 
 export const getLocalData = <K extends keyof StorageObject>(
   key: K,
-): Partial<StorageObject[K]> | undefined => {
-  const data = dataStorage.getString(key);
+): Promise<Partial<StorageObject[K]> | undefined> =>
+  AsyncStorage.getItem(key).then((data) => {
+    if (!data) return undefined;
 
-  if (!data) return undefined;
-
-  return JSON.parse(data) as Partial<StorageObject[K]>;
-};
+    return JSON.parse(data) as Partial<StorageObject[K]>;
+  });
