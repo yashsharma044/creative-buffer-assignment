@@ -1,0 +1,32 @@
+{
+  "home": {
+    "recentlyViewedProducts": "Recently Viewed Products",
+    "noRecentlyViewedTitle": "No recently viewed products",
+    "noRecentlyViewedText": "Products you view will appear here.",
+    "exploreProducts": "Explore Products"
+  },
+  "explore": {
+    "title": "Explore Products",
+    "loading": "Loading products...",
+    "errorTitle": "Something went wrong",
+    "errorDefault": "Unable to load products",
+    "emptyTitle": "No products available",
+    "deleteModal": {
+      "title": "Delete Product?",
+      "confirmNamed": "Are you sure you want to delete \"{name}\"?",
+      "confirmDefault": "Are you sure you want to delete this product?",
+      "cancelText": "Cancel",
+      "confirmText": "Delete"
+    }
+  },
+  "productDetail": {
+    "title": "Product Detail",
+    "loading": "Loading product...",
+    "errorTitle": "Product not available",
+    "errorDefault": "Unable to load this product.",
+    "rating": "Rating",
+    "reviews": "reviews",
+    "description": "Description",
+    "category": "Category"
+  }
+}
