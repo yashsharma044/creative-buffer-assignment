@@ -56,6 +56,7 @@ export default ProductCard;
 const styles = StyleSheet.create({
   card: {
     flex: 1,
+    maxWidth: "50%",
     margin: getWidth(6),
     padding: getWidth(12),
     borderRadius: getWidth(14),
@@ -66,6 +67,7 @@ const styles = StyleSheet.create({
 
   horizontalCard: {
     width: getWidth(170),
+    maxWidth: getWidth(170),
     flex: 0,
   },
 

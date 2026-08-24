@@ -126,12 +126,6 @@ const ExploreScreen = () => {
           { paddingBottom: Math.max(insets.bottom, getHeight(16)) + getHeight(12) },
         ]}
         showsVerticalScrollIndicator={false}
-        refreshControl={
-          <RefreshControl
-            refreshing={isFetching && !isLoading}
-            onRefresh={refetch}
-          />
-        }
       />
 
       <ConfirmationModal
@@ -140,9 +134,9 @@ const ExploreScreen = () => {
         message={
           selectedProduct
             ? translations.explore.deleteModal.confirmNamed.replace(
-                "{name}",
-                selectedProduct.title,
-              )
+              "{name}",
+              selectedProduct.title,
+            )
             : translations.explore.deleteModal.confirmDefault
         }
         cancelText={translations.explore.deleteModal.cancelText}
